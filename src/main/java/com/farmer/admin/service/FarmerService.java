@@ -9,4 +9,8 @@ import com.farmer.admin.entity.Users;
 @Service
 public interface FarmerService {
 	List<Users> getUser();
+
+	void userAdd(Users user);
+
+	Users userUpdate(Users user, Long id);
 }

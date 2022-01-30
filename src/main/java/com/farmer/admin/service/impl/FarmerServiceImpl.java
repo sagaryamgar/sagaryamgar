@@ -21,4 +21,15 @@ public class FarmerServiceImpl implements FarmerService{
 		return farmerAdminDao.getUser();
 	}
 	
+	@Override
+	public void userAdd(Users user) {
+		// TODO Auto-generated method stub
+		farmerAdminDao.addUser(user);
+	}
+
+	@Override
+	public Users userUpdate(Users user, Long id) {
+		// TODO Auto-generated method stub
+		return farmerAdminDao.userUpdate(user, id);
+	}
 }

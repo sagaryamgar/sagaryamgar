@@ -16,4 +16,8 @@ public interface FarmerAdminDao {
 
 	
 	public List<Users> getUser();
+
+	public void addUser(Users user);
+
+	public Users userUpdate(Users user, Long id);
 }

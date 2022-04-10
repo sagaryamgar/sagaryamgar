@@ -13,4 +13,6 @@ public interface FarmerService {
 	void userAdd(Users user);
 
 	Users userUpdate(Users user, Long id);
+
+	Users userDelete(Long id);
 }

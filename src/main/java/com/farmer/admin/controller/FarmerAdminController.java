@@ -39,8 +39,14 @@ public class FarmerAdminController {
 	
 	@RequestMapping(value = "/updateUser",method =RequestMethod.POST)
 	@ResponseBody
-	public void updateUser(@RequestBody Users user,@RequestParam Long id) {
-		farmerService.userUpdate(user, id);
+	public Users updateUser(@RequestBody Users user,@RequestParam Long id) {
+		return farmerService.userUpdate(user, id);
+	}
+	
+	@RequestMapping(value = "/deleteUser",method =RequestMethod.DELETE)
+	@ResponseBody
+	public Users deleteUser(@RequestParam Long id) {
+		return farmerService.userDelete(id);
 	}
 	
 }

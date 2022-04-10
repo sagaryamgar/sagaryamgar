@@ -32,4 +32,10 @@ public class FarmerServiceImpl implements FarmerService{
 		// TODO Auto-generated method stub
 		return farmerAdminDao.userUpdate(user, id);
 	}
+
+	@Override
+	public Users userDelete(Long id) {
+		// TODO Auto-generated method stub
+		return farmerAdminDao.userDelete(id);
+	}
 }

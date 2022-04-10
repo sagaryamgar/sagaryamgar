@@ -20,4 +20,6 @@ public interface FarmerAdminDao {
 	public void addUser(Users user);
 
 	public Users userUpdate(Users user, Long id);
+
+	public Users userDelete(Long id);
 }

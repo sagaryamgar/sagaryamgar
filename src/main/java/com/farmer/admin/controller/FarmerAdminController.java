@@ -3,7 +3,10 @@ package com.farmer.admin.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,15 +25,22 @@ public class FarmerAdminController {
 	public List<Users> getUsers() {
 		return farmerService.getUser();
 	}
-	@RequestMapping("/userUpdate")
+	@RequestMapping(value = "/userUpdate",method = RequestMethod.POST)
 	@ResponseBody
-	public Users userUpdate(@RequestParam Users user) {
+	public Users userUpdate(@RequestBody Users user) {
 		Long id = user.getId();
 		return farmerService.userUpdate(user, id);
 	}
-	@RequestMapping("/addUser")
+	@RequestMapping(value = "/addUser",method =RequestMethod.PUT)
 	@ResponseBody
-	public void addUser(@RequestParam Users user) {
+	public void addUser(@RequestBody Users user) {
 		farmerService.userAdd(user);
 	}
+	
+	@RequestMapping(value = "/updateUser",method =RequestMethod.POST)
+	@ResponseBody
+	public void updateUser(@RequestBody Users user,@RequestParam Long id) {
+		farmerService.userUpdate(user, id);
+	}
+	
 }
